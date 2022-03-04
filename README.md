@@ -1,97 +1,45 @@
-# Reference
+## Django Starter Template ##
 
-1. https://simpleisbetterthancomplex.com/series/2017/09/04/a-complete-beginners-guide-to-django-part-1.html
-2. https://www.javatpoint.com/django-tutorial
-3. https://tutorial.djangogirls.org/en/
-4. https://overiq.com/django-1-11/
+The project contains 3 apps:
 
-==================================================================================================
+- accounts (for user register, login, logout, forgot password) (Using Django REST and GraphQL)
+- chat (one to one chat) (Using Django Channels)
+- crud_operation (Basic CRUD operations performed on Task model using Django REST)
 
-# Installation
+Steps to follow:
 
-1. python -m pip install Django
+1 - create conda env with python version using:
 
-2. check Django version
-   django-admin --version
+conda create -n myenv python=X.Y  # Replace "X.Y" as appropriate
 
-# Installing Virtualenv
+2 - activate env:
 
-- https://simpleisbetterthancomplex.com/series/2017/09/04/a-complete-beginners-guide-to-django-part-1.html#installing-virtualenv
+conda activate myenv
 
-- sudo pip3 install virtualenv
-- cd project
+3 - Point your terminal path to project folder
 
-- create vertualenv folder
-    virtualenv --system-site-packages templatevenv   (Your System package install)
-    OR
-    virtualenv templatevenv -p python3 (Install manually)
+4 - Install packages from requirements.txt using:
 
-- If error generate to run project for six
-     pip install --ignore-installed six
+pip install -r requirements.txt
+or
+conda install --file requirements.txt
 
-- active virtualenv
-    source templatevenv/bin/activate
-    ./manage.py runserver
-    
-- deactive virtualenv    
-    deactivate
-    
-# Create Project
+5 - To create a super-user:
 
-1. django-admin startproject projectName
+python manage.py create superuser
 
-# Run Project
+6 - To make app specific migrations:
 
-1. python manage.py runserver
+python manage.py makemigrations app_name
 
-# Create app
+7 - After all app specific migrations are done:
 
-1. django-admin startapp blog
+python manage.py migrate
 
-# MySqlClient Installation (DATABASE CONNECTIVITY)
+8 - Run server:
 
-- Install mysqlClient
-  pip install mysqlclient
+python manage.py runserver
 
-- If error in brew
-  sudo chown -R "\$(whoami)":admin /usr/local/lib
+9 - To deactivate env:
 
-- # mysqlclient Installation Error
-  A. brew install mysql-client
-  B. echo 'export PATH="/usr/local/opt/mysql-client/bin:\$PATH"' >> ~/.bash_profile
-  C. source ~/.bash_profile
-  D. pip install mysqlclient
-
-# Create migration
-
-1.  python manage.py makemigrations
-    OR
-    python3 manage.py makemigrations
-    OR
-    ./manage.py makemigrations
-
-
-2.  python manage.py migrate
-
-# SCSS INSTALLATION
-
-- https://www.accordbox.com/blog/how-use-scss-sass-your-django-project-python-way/
-
-1. pip install django_compressor
-2. pip install django-libsass
-3. add bootstrap(scss) folder in static folder
-4.  run command
-    python manage.py compress
-
-# requirements.txt (packages list)
-- create this file at root level
-- pip install -r requirements.txt
-- pip freeze > requirements.txt
-
-# .env file or more
-- https://github.com/henriquebastos/python-decouple
-- pip install python-decouple
-
-# REST FRAMEWORK (API)
-- https://www.django-rest-framework.org/
-
+conda deactivate
