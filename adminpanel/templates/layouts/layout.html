@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}  {% endblock title%}</title>
+     {% include '../includes/cssfiles.html' %}
+</head>
+  <body class="gray-bg">
+         {% block body %}
+
+             {% endblock %}
+      {% include '../includes/jsfiles.html' %}
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% load static compress %}
+
+<link type="text/css" href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" media="screen">
+<link type="text/css" href="{% static 'css/custom.css' %}" rel="stylesheet" media="screen">
+<link rel="stylesheet" href="{% static 'plugins/toastr/toastr.min.css' %}">
+<link rel="stylesheet" href="{% static 'plugins/dataTables/datatables.min.css' %}">
+<link rel="stylesheet" href="{% static 'plugins/dataTables/responsive.dataTables.min.css' %}">
+<link rel="stylesheet" href="{% static 'plugins/sweetalert2/sweetalert2.min.css' %}">
+
+    {% compress css %}
+     <link type="text/x-scss" href="{% static 'scss/importer.scss' %}" rel="stylesheet" media="screen">
+    {% endcompress %}

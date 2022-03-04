@@ -1,0 +1,27 @@
+ <div class="form-group row">
+     <label class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+             <input type="text" class="form-control" name="name" value="{{result.name|default:''}}" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" name="email" value="{{result.email|default:''}}" />
+                        </div>
+                    </div>
+
+                {% if result is None %}
+                   <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" name="password" id="password" value="" />
+                        </div>
+                    </div>
+                   <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Confirm Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" name="confirm_password" value="" />
+                        </div>
+                   </div>
+                {% endif %}
