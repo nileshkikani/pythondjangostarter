@@ -1,5 +1,8 @@
+.idea
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
+**/__pycache__/ 
 *.py[cod]
 *$py.class
 
@@ -82,6 +85,8 @@ profile_default/
 ipython_config.py
 
 # pyenv
+
+templatevenv/
 .python-version
 
 # pipenv
